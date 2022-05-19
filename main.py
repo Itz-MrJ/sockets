@@ -1,7 +1,7 @@
 import socket               
 
 s = socket.socket()         # Create a socket object
-host = '180.151.116.131'    #private ip address of machine running fedora
+host = '0.0.0.0'    #private ip address of machine running fedora
 port = 5000                
 s.bind((host, port))       
 print('Listening...')
