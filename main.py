@@ -2,7 +2,7 @@ import socket
 import threading
 
 HEADER = 64
-PORT = 8765
+PORT = 5001
 SERVER = ''
 ADDR = (SERVER, PORT)
 FORMAT = 'utf-8'
