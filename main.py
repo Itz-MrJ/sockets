@@ -18,9 +18,9 @@ def handle_client(conn, addr):
     msg_length = conn.recv(HEADER).decode(FORMAT)
     driver = webdriver.Chrome()
     print(msg_length)
-    conn.send("Msg received {}".encode(FORMAT))
     test = driver.get("https://api.tracker.gg/api/v2/valorant/standard/profile/riot/mrj%2300003/")
     print(test.text)
+    conn.send("Msg received {}".encode(FORMAT))
     conn.close()
     driver.close()
         
