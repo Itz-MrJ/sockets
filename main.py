@@ -16,7 +16,7 @@ server.bind(ADDR)
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
     msg_length = conn.recv(HEADER).decode(FORMAT)
-    driver = webdriver.Chrome(executable_path='/usr/lib/chromium-browser/chromedriver')
+    driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
     print(msg_length)
     print('fetching')
     test = driver.get("https://api.tracker.gg/api/v2/valorant/standard/profile/riot/mrj%2300003/")
