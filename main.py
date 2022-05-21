@@ -1,5 +1,6 @@
 import socket 
 import threading
+from selenium import webdriver
 
 HEADER = 64
 PORT = 5001
@@ -11,12 +12,17 @@ DISCONNECT_MESSAGE = "!DISCONNECT"
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
 
+
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
     msg_length = conn.recv(HEADER).decode(FORMAT)
+    driver = webdriver.Chrome()
     print(msg_length)
     conn.send("Msg received {}".encode(FORMAT))
+    test = driver.get("https://api.tracker.gg/api/v2/valorant/standard/profile/riot/mrj%2300003/")
+    print(test.text)
     conn.close()
+    driver.close()
         
 
 def start():
