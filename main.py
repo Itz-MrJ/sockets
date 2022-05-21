@@ -15,13 +15,8 @@ def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
     msg_length = conn.recv(HEADER).decode(FORMAT)
     print(msg_length)
-    if msg_length:
-      print('inmsg_len')
-      msg_length = int(msg_length)
-      msg = conn.recv(msg_length).decode(FORMAT)
-      print(f"[{addr}] {msg}")
-      conn.send("Msg received {}".encode(FORMAT))
-      conn.close()
+    conn.send("Msg received {}".encode(FORMAT))
+    conn.close()
         
 
 def start():
