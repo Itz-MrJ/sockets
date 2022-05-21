@@ -14,6 +14,7 @@ server.bind(ADDR)
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
     msg_length = conn.recv(HEADER).decode(FORMAT)
+    print(msg_length)
     if msg_length:
       print('inmsg_len')
       msg_length = int(msg_length)
